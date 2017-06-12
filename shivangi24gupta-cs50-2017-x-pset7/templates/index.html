@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}
+    Quoted
+{% endblock %}
+{% block main %}
+    <form>
+        <fieldset>
+            
+            <div class="container">
+                <div class="bg-success text-white"><h2>{{status}}</h2></div>
+            <div class="form-group"><h2> Welcome! Your shares</h2>
+            
+            <table class="table table-striped">
+                <tr><th>Symbol</th><th>Name</th><th>Shares</th><th>Price</th><th>Total</th></tr>
+                {% for s in stock %}
+                <tr><td>{{s.symbol}}</td><td>{{s.name}}</td><td>{{s.quantity}}</td><td>{{s.price}}</td><td>{{s.total}}</td></tr>
+                {% endfor %}
+                <tr><td>cash</td><td></td><td> </td><td></td><td>{{cash}}</td></tr>
+                <tr><td></td><td></td><td></td><td></td><td><b>{{total}}</b></td></tr>
+            </table>
+            </div>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}
